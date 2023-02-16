@@ -1,0 +1,10 @@
+#pip install ibm_db
+import ibm_db
+import codecs
+
+conn = ibm_db.connect("DATABASE=database_name;HOSTNAME=hostname;PORT=port_number;PROTOCOL=TCPIP;UID=username;PWD=password;", "", "")
+
+with codecs.open('filename', 'rb', encoding='cp500') as file:
+    data = file.read()
+
+ibm_db.close(conn)
